@@ -1,0 +1,20 @@
+<c:FragmentDefinition xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+
+    <Dialog id="dialogKids">
+        <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+            <form:content>
+                <c:Title text="Dados do dependente" />
+                <c:Fragment fragmentName="mentoria.fiori.ka.zkaui5242icsf.view.InputName" />
+                <Label text="Data de Nascimento" />
+                <DatePicker />
+            </form:content>
+        </form:SimpleForm>
+        
+        <endButton>
+            <Button text="Fechar" icon="sap-icon://decline" type="Reject" press="onClosePopup"/>
+        </endButton>
+    </Dialog>
+
+</c:FragmentDefinition>
