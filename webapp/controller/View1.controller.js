@@ -21,6 +21,10 @@ sap.ui.define([
                 })
                 this.getView().setModel(oModelJson2, "model2");
 
+                var oModelJson3 = new JSONModel();
+                oModelJson3.loadData("model/Products.json")
+                this.getView().setModel(oModelJson3, "model3");
+
             },
             onOpenDialog: function () {
 

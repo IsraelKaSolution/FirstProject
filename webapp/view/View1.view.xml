@@ -8,6 +8,10 @@
             <Button text="Cadastrar dependentes" type="Success" icon="sap-icon://person-placeholder" press="onOpenDialog"/>
         </headerContent>
         <content>
+
+            <List items="{model3>/Products}">
+                <StandardListItem title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
+            </List>
             
             <form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
                 <form:content>
