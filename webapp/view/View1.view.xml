@@ -13,13 +13,16 @@
                 <form:content>
                     <core:Title text="Dados do usuário" id="title0"/>
                     <Label text="Nome" />
-                    <TextArea value="{/name}" width="100%" />
-                    
+                    <TextArea value="{model1>/name}" width="100%" />
+
                     <Label text="Usar sobrenome" />
-                    <Switch state="{/showSecondName}" customTextOn="Sim" customTextOff="Não"/>
+                    <Switch state="{model1>/showSecondName}" customTextOn="Sim" customTextOff="Não"/>
                     
-                    <Label text="Sobrenome" visible="{/showSecondName}"/>
-                    <Input width="100%" visible="{/showSecondName}"/>
+                    <Label text="Sobrenome" visible="{model1>/showSecondName}"/>
+                    <Input width="100%" visible="{model1>/showSecondName}"/>
+
+                    <Label text="Auxiliar" />
+                    <Input value="{model2>/name}" width="100%" />
 
                     <Label text="E-mail" id="label1"/>
                     <Input width="100%" id="input2"/>

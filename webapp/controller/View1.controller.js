@@ -1,22 +1,29 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/BindingMode"
 ],
-    function (Controller, Fragment, JSONModel) {
+    function (Controller, Fragment, JSONModel, BindingMode) {
         "use strict";
 
         return Controller.extend("mentoria.fiori.ka.zkaui5242icsf.controller.View1", {
-            onInit: function () {
 
+            onInit: function () {
                 var oModelJson = new JSONModel({ 
                     name: 'João',
                     showSecondName: true
-                 })
-                this.getView().setModel(oModelJson);
+                })
+                this.getView().setModel(oModelJson, "model1");
+
+                var oModelJson2 = new JSONModel({ 
+                    name: 'Pedro'
+                })
+                this.getView().setModel(oModelJson2, "model2");
 
             },
             onOpenDialog: function () {
+
                 var oView = this.getView(),
                     oDialogKids = this.getView().byId("dialogKids");
                 if (!oDialogKids) {
