@@ -9,13 +9,11 @@
         </headerContent>
         <content>
 
-            <Panel headerText="Lista de Produtos" expanded="{= ${device>/system/desktop} }" expandable="true" >
+            <Panel headerText="{i18n>lbTitlePanel1}" expanded="{= ${device>/system/desktop} }" expandable="true" >
                 <List items="{path: 'model3>/Products', filters: [{path: 'CategoryID', operator: 'EQ', value1: '2'}]  }" >
-                <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
-            </List>
+                    <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
+                </List>
             </Panel>
-
-
 
             <ComboBox items="{model4>/data}" selectionChange="onDataComboBoxChange">
                 <core:Item text="{model4>departament}"></core:Item>
