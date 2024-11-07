@@ -9,22 +9,23 @@
         </headerContent>
         <content>
 
-            <Panel headerText="{i18n>lbTitlePanel1}" expanded="{= ${device>/system/desktop} }" expandable="true" >
+            <Panel headerText="{i18n>lbTitlePanel1}"  expandable="true" >
                 <List items="{path: 'model3>/Products', filters: [{path: 'CategoryID', operator: 'EQ', value1: '2'}]  }" >
                     <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
                 </List>
             </Panel>
 
-            <ComboBox items="{model4>/data}" selectionChange="onDataComboBoxChange">
-                <core:Item text="{model4>departament}"></core:Item>
-            </ComboBox>
+            <Panel headerText="{i18n>lbTitlePanel2}"  expandable="true" >
+                <ComboBox items="{model4>/data}" selectionChange="onDataComboBoxChange">
+                    <core:Item text="{model4>departament}"></core:Item>
+                </ComboBox>
 
-            <List items="{model4>employees}" headerText="{model4>titleDep}" id="listEmployees">
-                <StandardListItem title="{model4>name}"></StandardListItem>
-            </List>
+                <List items="{model4>employees}" headerText="{model4>titleDep}" id="listEmployees">
+                    <StandardListItem title="{model4>name}"></StandardListItem>
+                </List>
+            </Panel>
 
-
-
+            <Panel headerText="{i18n>lbTitlePanel3}"  expandable="true" >
             <form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
                 <form:content>
                     <core:Title text="Dados do usuário" id="title0"/>
@@ -44,6 +45,9 @@
                     <Input width="100%" id="input2"/>
                 </form:content>
             </form:SimpleForm>
+            </Panel>
+
+
         </content>
     </Page>
 </mvc:View>

@@ -2,22 +2,22 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/BindingMode"
+    "sap/m/MessageToast"
 ],
-    function (Controller, Fragment, JSONModel, BindingMode) {
+    function (Controller, Fragment, JSONModel, MessageToast) {
         "use strict";
 
         return Controller.extend("mentoria.fiori.ka.zkaui5242icsf.controller.View1", {
 
             onInit: function () {
                 //Criando model direto com objeto JavaScript
-                var oModelJson = new JSONModel({ 
+                var oModelJson = new JSONModel({
                     name: 'João',
                     showSecondName: true
                 })
                 this.getView().setModel(oModelJson, "model1");
 
-                var oModelJson2 = new JSONModel({ 
+                var oModelJson2 = new JSONModel({
                     name: 'Pedro'
                 })
                 this.getView().setModel(oModelJson2, "model2");
@@ -28,17 +28,22 @@ sap.ui.define([
                 oModelJson3.loadData("model/Products.json")
                 //Vinculando model na View 
                 this.getView().setModel(oModelJson3, "model3");
-                
+
                 var oModelJson4 = new JSONModel();
                 oModelJson4.loadData("model/Employees.json")
                 this.getView().setModel(oModelJson4, "model4");
 
+                var oBubdle = this.getOwnerComponent().getModel("i18n").getResourceBundle(),
+                    msg = oBubdle.getText("msgInit", ["com", "sucesso"]);
+
+                MessageToast.show(msg);
+
             },
 
             formatAlertStock: function (units) {
-                if(units > 0){
+                if (units > 0) {
                     return ""
-                }else{
+                } else {
                     return "Disponível em breve";
                 }
             },
@@ -56,7 +61,7 @@ sap.ui.define([
 
                 //Vinculando toda a lista ao caminho/contexto relativo ao item do combobox selecionado
                 //Preciso colocar o nome do model quando eu dou um nome para ele na vinculação do onInit
-                oList.bindElement({path: sPath, model: "model4"});
+                oList.bindElement({ path: sPath, model: "model4" });
             },
 
             onOpenDialog: function () {
