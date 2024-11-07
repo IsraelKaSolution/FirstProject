@@ -1,0 +1,20 @@
+{   
+    "data": [
+        {
+            "departament": "HR",
+            "titleDep": "Recursos humanos",
+            "employees": [
+                {"name": "João"},
+                {"name": "Pedro"}
+            ]
+        },
+        {
+            "departament": "IT",
+            "titleDep": "Tecnologia da Informação",
+            "employees": [
+                {"name": "Luan"},
+                {"name": "Lucas"}
+            ]
+        }
+    ]
+}

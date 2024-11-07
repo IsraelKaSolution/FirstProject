@@ -9,7 +9,15 @@
         </headerContent>
         <content>
 
-            <List items="{model3>/Products}">
+            <ComboBox items="{model4>/data}" selectionChange="onDataComboBoxChange">
+                <core:Item text="{model4>departament}"></core:Item>
+            </ComboBox>
+
+            <List headerText="{model4>titleDep}" id="listEmployees" items="{model4>employees}">
+                <StandardListItem title="{model4>name}"></StandardListItem>
+            </List>
+
+            <List items="{model3>/Products}" visible="false">
                 <StandardListItem title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
             </List>
             

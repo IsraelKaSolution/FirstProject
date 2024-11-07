@@ -24,8 +24,21 @@ sap.ui.define([
                 var oModelJson3 = new JSONModel();
                 oModelJson3.loadData("model/Products.json")
                 this.getView().setModel(oModelJson3, "model3");
+                
+                var oModelJson4 = new JSONModel();
+                oModelJson4.loadData("model/Employees.json")
+                this.getView().setModel(oModelJson4, "model4");
 
             },
+
+            onDataComboBoxChange: function (oEvent) {
+                var oItem = oEvent.getParameter("selectedItem")
+                var sPath = oItem.getBindingContext("model4").getPath();
+
+                var oList = this.byId("listEmployees");
+                oList.bindElement({path: sPath, model: "model4"});
+            },
+
             onOpenDialog: function () {
 
                 var oView = this.getView(),
