@@ -31,6 +31,14 @@ sap.ui.define([
 
             },
 
+            formatAlertStock: function (units) {
+                if(units > 0){
+                    return ""
+                }else{
+                    return "Disponível em breve";
+                }
+            },
+
             onDataComboBoxChange: function (oEvent) {
                 var oItem = oEvent.getParameter("selectedItem")
                 var sPath = oItem.getBindingContext("model4").getPath();

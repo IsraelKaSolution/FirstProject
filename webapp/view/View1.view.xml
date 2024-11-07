@@ -9,18 +9,21 @@
         </headerContent>
         <content>
 
+
+            <List items="{model3>/Products}" >
+                <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
+            </List>
+
             <ComboBox items="{model4>/data}" selectionChange="onDataComboBoxChange">
                 <core:Item text="{model4>departament}"></core:Item>
             </ComboBox>
 
-            <List headerText="{model4>titleDep}" id="listEmployees" items="{model4>employees}">
+            <List items="{model4>employees}" headerText="{model4>titleDep}" id="listEmployees">
                 <StandardListItem title="{model4>name}"></StandardListItem>
             </List>
 
-            <List items="{model3>/Products}" visible="false">
-                <StandardListItem title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
-            </List>
-            
+
+
             <form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
                 <form:content>
                     <core:Title text="Dados do usuário" id="title0"/>
@@ -29,7 +32,7 @@
 
                     <Label text="Usar sobrenome" />
                     <Switch state="{model1>/showSecondName}" customTextOn="Sim" customTextOff="Não"/>
-                    
+
                     <Label text="Sobrenome" visible="{model1>/showSecondName}"/>
                     <Input width="100%" visible="{model1>/showSecondName}"/>
 
