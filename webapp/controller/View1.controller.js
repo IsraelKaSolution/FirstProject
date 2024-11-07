@@ -10,6 +10,7 @@ sap.ui.define([
         return Controller.extend("mentoria.fiori.ka.zkaui5242icsf.controller.View1", {
 
             onInit: function () {
+                //Criando model direto com objeto JavaScript
                 var oModelJson = new JSONModel({ 
                     name: 'João',
                     showSecondName: true
@@ -21,8 +22,11 @@ sap.ui.define([
                 })
                 this.getView().setModel(oModelJson2, "model2");
 
+                //Criando model
                 var oModelJson3 = new JSONModel();
+                //Carregando arquivo JSON
                 oModelJson3.loadData("model/Products.json")
+                //Vinculando model na View 
                 this.getView().setModel(oModelJson3, "model3");
                 
                 var oModelJson4 = new JSONModel();
@@ -40,10 +44,18 @@ sap.ui.define([
             },
 
             onDataComboBoxChange: function (oEvent) {
+                //Pegando item selecionado no combobox
                 var oItem = oEvent.getParameter("selectedItem")
+
+                //Pegando o contexto da vinculação e depois o caminho dele (path)
+                //Preciso colocar o nome do model quando eu dou um nome para ele na vinculação do onInit
                 var sPath = oItem.getBindingContext("model4").getPath();
 
+                //Obtendo eferencia da lista
                 var oList = this.byId("listEmployees");
+
+                //Vinculando toda a lista ao caminho/contexto relativo ao item do combobox selecionado
+                //Preciso colocar o nome do model quando eu dou um nome para ele na vinculação do onInit
                 oList.bindElement({path: sPath, model: "model4"});
             },
 

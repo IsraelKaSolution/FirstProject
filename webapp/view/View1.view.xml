@@ -10,7 +10,7 @@
         <content>
 
 
-            <List items="{model3>/Products}" >
+            <List items="{path: 'model3>/Products', filters: [{path: 'CategoryID', operator: 'EQ', value1: '2'}]  }" >
                 <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
             </List>
 
