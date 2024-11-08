@@ -46,9 +46,14 @@
                     </form:content>
                 </form:SimpleForm>
             </Panel>
-
+            
             <Panel headerText="{i18n>lbTitlePanel4}" expandable="true">
                 <core:Fragment fragmentName="mentoria.fiori.ka.zkaui5242icsf.view.TableUxCustumer"/>
+            </Panel>
+
+            <Panel headerText="{i18n>lbTitlePanel5}" expandable="true">
+                <Input change="onChangeLine" placeholder="Compania Áerea"/>
+                <Input id="carridName" busyIndicatorDelay="0" />
             </Panel>
         </content>
     </Page>

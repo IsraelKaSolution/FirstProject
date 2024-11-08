@@ -1,8 +1,8 @@
 <c:FragmentDefinition xmlns="sap.m"
     xmlns:c="sap.ui.core">
 
-    <Table id="customerTable" growing="true" growingThreshold="5" class="sapUiResponsiveMargin" width="auto" mode="SingleSelectLeft" selectionChange=".onCustomerChange" items="{ path: '/UX_Customer',
-                            sorter: [ {path: 'City', group: true}, {path: 'CustomerName'} ] }">
+    <Table id="customerTable"  items="{ path: '/UX_Customer',
+                            sorter: [ {path: 'City', group: true}, {path: 'CustomerName'} ] }" growing="true" growingThreshold="5" class="sapUiResponsiveMargin" width="auto" mode="SingleSelectLeft" selectionChange=".onCustomerChange">
         <headerToolbar>
             <Toolbar>
                 <Title text="{i18n>customerTableHeader}"/>
@@ -45,7 +45,7 @@
         <items>
             <ColumnListItem>
                 <cells>
-                    <ObjectIdentifier title="{CustomerName}"/>
+                    <ObjectIdentifier title="{CustomerName}" text="{CustomerGuid}"/>
                     <Text text="{Street}"/>
                     <Text text="{PostCode}"/>
                     <Text text="{City}"/>

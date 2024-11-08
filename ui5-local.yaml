@@ -35,3 +35,8 @@ server:
             client: '100'
             destination: MentoriaFIORIKA
             authenticationType: BasicAuthentication
+          - path: /sap
+            url: http://s4d.virtual:443
+            client: '100'
+            destination: MentoriaFIORIKA
+            authenticationType: BasicAuthentication

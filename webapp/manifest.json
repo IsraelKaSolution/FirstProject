@@ -21,8 +21,26 @@
                 "type": "OData",
                 "settings": {
                     "annotations": [],
-                    "localUri": "localService/metadata.xml",
+                    "localUri": "localService/ux_ui_customer/metadata.xml",
                     "odataVersion": "4.0"
+                }
+            },
+            "UX_TRAVEL_SRV_Annotation": {
+                "uri": "/destinations/MentoriaFIORIKA/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='UX_TRAVEL_ANNO_MDL',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/UX_TRAVEL_SRV/UX_TRAVEL_SRV_Annotation.xml"
+                }
+            },
+            "UX_TRAVEL_SRV": {
+                "uri": "/sap/opu/odata/sap/UX_TRAVEL_SRV",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "UX_TRAVEL_SRV_Annotation"
+                    ],
+                    "localUri": "localService/UX_TRAVEL_SRV/metadata.xml",
+                    "odataVersion": "2.0"
                 }
             }
         }
@@ -71,6 +89,18 @@
                     "operationMode": "Server",
                     "autoExpandSelect": true,
                     "earlyRequests": true
+                }
+            },
+            "UX_TRAVEL_SRV": {
+                "dataSource": "UX_TRAVEL_SRV",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
                 }
             }
         },

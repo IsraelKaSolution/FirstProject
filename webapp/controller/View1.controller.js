@@ -40,6 +40,26 @@ sap.ui.define([
 
             },
 
+            onChangeLine: function (oEvent) {
+                var value = oEvent.getParameter("value"),
+                    oModel = this.getOwnerComponent().getModel("UX_TRAVEL_SRV"),
+                    oInput = this.byId("carridName");
+
+                // Chave: /UX_C_Carrier_TP('AA')
+                oInput.setBusy(true);
+                oModel.read("/UX_C_Carrier_TP('" + value + "')", {
+                    success: function (oData) {
+                        MessageToast.show("OK")
+                        oInput.setValue(oData.Carrname);
+                        oInput.setBusy(false);
+                    },
+                    error: function (oError) {
+                        MessageToast.show("ERRO!")
+                    }
+                });
+
+            },
+
             formatAlertStock: function (units) {
                 if (units > 0) {
                     return ""
