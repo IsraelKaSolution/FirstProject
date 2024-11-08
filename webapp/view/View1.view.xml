@@ -9,13 +9,13 @@
         </headerContent>
         <content>
 
-            <Panel headerText="{i18n>lbTitlePanel1}"  expandable="true" >
-                <List items="{path: 'model3>/Products', filters: [{path: 'CategoryID', operator: 'EQ', value1: '2'}]  }" >
+            <Panel headerText="{i18n>lbTitlePanel1}" expandable="true">
+                <List items="{path: 'model3>/Products', filters: [{path: 'CategoryID', operator: 'EQ', value1: '2'}]  }">
                     <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"></StandardListItem>
                 </List>
             </Panel>
 
-            <Panel headerText="{i18n>lbTitlePanel2}"  expandable="true" >
+            <Panel headerText="{i18n>lbTitlePanel2}" expandable="true">
                 <ComboBox items="{model4>/data}" selectionChange="onDataComboBoxChange">
                     <core:Item text="{model4>departament}"></core:Item>
                 </ComboBox>
@@ -25,29 +25,31 @@
                 </List>
             </Panel>
 
-            <Panel headerText="{i18n>lbTitlePanel3}"  expandable="true" >
-            <form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
-                <form:content>
-                    <core:Title text="Dados do usuário" id="title0"/>
-                    <Label text="Nome" />
-                    <TextArea value="{model1>/name}" width="100%" />
+            <Panel headerText="{i18n>lbTitlePanel3}" expandable="true">
+                <form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
+                    <form:content>
+                        <core:Title text="Dados do usuário" id="title0"/>
+                        <Label text="Nome" />
+                        <TextArea value="{model1>/name}" width="100%" />
 
-                    <Label text="Usar sobrenome" />
-                    <Switch state="{model1>/showSecondName}" customTextOn="Sim" customTextOff="Não"/>
+                        <Label text="Usar sobrenome" />
+                        <Switch state="{model1>/showSecondName}" customTextOn="Sim" customTextOff="Não"/>
 
-                    <Label text="Sobrenome" visible="{model1>/showSecondName}"/>
-                    <Input width="100%" visible="{model1>/showSecondName}"/>
+                        <Label text="Sobrenome" visible="{model1>/showSecondName}"/>
+                        <Input width="100%" visible="{model1>/showSecondName}"/>
 
-                    <Label text="Auxiliar" />
-                    <Input value="{model2>/name}" width="100%" />
+                        <Label text="Auxiliar" />
+                        <Input value="{model2>/name}" width="100%" />
 
-                    <Label text="E-mail" id="label1"/>
-                    <Input width="100%" id="input2"/>
-                </form:content>
-            </form:SimpleForm>
+                        <Label text="E-mail" id="label1"/>
+                        <Input width="100%" id="input2"/>
+                    </form:content>
+                </form:SimpleForm>
             </Panel>
 
-
+            <Panel headerText="{i18n>lbTitlePanel4}" expandable="true">
+                <core:Fragment fragmentName="mentoria.fiori.ka.zkaui5242icsf.view.TableUxCustumer"/>
+            </Panel>
         </content>
     </Page>
 </mvc:View>
