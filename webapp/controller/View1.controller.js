@@ -85,6 +85,9 @@ sap.ui.define([
             },
 
             onOpenDialog: function () {
+                var oRouter = this.getOwnerComponent().getRouter();
+                oRouter.navTo("Rota2");
+                return;
 
                 var oView = this.getView(),
                     oDialogKids = this.getView().byId("dialogKids");
