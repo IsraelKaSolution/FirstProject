@@ -132,7 +132,7 @@
                 
                 {
                     "name": "Rota2",
-                    "pattern": "Exemplo",
+                    "pattern": "Exemplo/{id}",
                     "target": "TargetView2"
                 }
             ],
@@ -145,10 +145,7 @@
                     "viewName": "View1"
                 },
                 "TargetView2": {
-                    "viewType": "XML",
                     "transition": "fade",
-                    "clearControlAggregation": false,
-                    "viewId": "View2",
                     "viewName": "View2"
                 }
             }

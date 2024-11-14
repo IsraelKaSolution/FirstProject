@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName=""
+	controllerName="mentoria.fiori.ka.zkaui5242icsf.controller.View2"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	displayBlock="true"

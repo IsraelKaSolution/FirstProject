@@ -55,6 +55,10 @@
                 <Input change="onChangeLine" placeholder="Compania Áerea"/>
                 <Input id="carridName" busyIndicatorDelay="0" />
             </Panel>
+
+            <Panel headerText="{i18n>lbTitlePanel6}" expandable="true">
+                <Input value="{model1>/id}"/>
+            </Panel>
         </content>
     </Page>
 </mvc:View>

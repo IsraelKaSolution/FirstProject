@@ -13,7 +13,8 @@ sap.ui.define([
                 //Criando model direto com objeto JavaScript
                 var oModelJson = new JSONModel({
                     name: 'João',
-                    showSecondName: true
+                    showSecondName: true,
+                    id: ''
                 })
                 this.getView().setModel(oModelJson, "model1");
 
@@ -85,8 +86,10 @@ sap.ui.define([
             },
 
             onOpenDialog: function () {
-                var oRouter = this.getOwnerComponent().getRouter();
-                oRouter.navTo("Rota2");
+                var oRouter = this.getOwnerComponent().getRouter(),
+                    sId = this.getView().getModel("model1").getProperty("/id");
+
+                oRouter.navTo("Rota2", {id: sId});
                 return;
 
                 var oView = this.getView(),
